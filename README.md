@@ -43,9 +43,13 @@ The project implements five key queries using both RDD API and Spark SQL to gain
 
 #### Queries:
 **1.** Highest-grossing Movie per Year (From 2000 onward, ignoring entries with missing data)
+
 **2.** Percentage of Users with Average Rating > 3
+
 **3.** Average Rating and Count of Movies per Genre
+
 **4.** Average Length of Movie Summaries (in words) for 'Drama' Movies per 5-year Period (from 2000)
+
 **5.** Top User per Genre with Favorite and Least Favorite Movies Based on Ratings
 
 ### Part 2: Join Operations in Spark
@@ -72,7 +76,7 @@ hdfs dfs -put movie_data /path/to/hdfs/files
 ```bash
 spark-submit script.py
 ```
-Be careful, for query 1 (q1) the user must give the input format (csv || parquet). For example:
+**Note :** For the Spark SQL implementation of Query 1 (q1) the user must give the input format (csv || parquet). For example:
 ```bash
 spark-submit q1_sql.py csv
 ```
