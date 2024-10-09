@@ -4,6 +4,11 @@ This is a project developed for the ECE NTUA course "Advanced Topics in Database
 ## Project Overview
 This project leverages Apache Spark to perform analytical queries on a subset of the Full MovieLens Dataset. The dataset consists of movie information, genres, and user ratings. The analysis covers data transformation and the execution of various queries using both RDD API and Spark SQL.
 
+## Our Team
+- [Aikaterini Liagka](https://github.com/LiagkaAikaterini)
+- [Stela Zhara](https://github.com/stelazr)
+- Alexopoulos Ioannis
+
 ## Datasets
 The dataset we used for the analysis is a subset of the [Full MovieLens Dataset](https://grouplens.org/datasets/movielens/latest/). The version we leveraged can be found on [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset). The exact Dataset we used can be downloaded [here](http://www.cslab.ntua.gr/courses/atds/movie_data.tar.gz) and it includes the following CSV files:
 
@@ -26,3 +31,54 @@ The dataset we used for the analysis is a subset of the [Full MovieLens Dataset]
     - _movie_id_: The unique identifier of the movie that was rated (integer). This corresponds to the id field in the `movies.csv` file.
     - _rating_: The rating score provided by the user, typically on a scale from 0.5 to 5.0, in increments of 0.5 (float).
     - _timestamp_: The time at which the rating was submitted (integer, UNIX epoch format).
+
+## Requirements
+- Apache Spark (2.4.4 or newer)
+- HDFS for file storage
+- Python 3.x
+
+## Objectives
+### Part 1: Analytical Queries Using Apache Spark
+The project implements five key queries using both RDD API and Spark SQL to gain insights from the data.
+
+#### Queries:
+**1.** Highest-grossing Movie per Year (From 2000 onward, ignoring entries with missing data)
+**2.** Percentage of Users with Average Rating > 3
+**3.** Average Rating and Count of Movies per Genre
+**4.** Average Length of Movie Summaries (in words) for 'Drama' Movies per 5-year Period (from 2000)
+**5.** Top User per Genre with Favorite and Least Favorite Movies Based on Ratings
+
+### Part 2: Join Operations in Spark
+Implementation and comparison of different join algorithms:
+
+- Broadcast Join (Map-Side Join)
+- Repartition Join (Reduce-Side Join)
+
+## Installation
+**1.** Clone the repository:
+
+``` bash
+git clone https://github.com/LiagkaAikaterini/Advanced_Databases.git
+cd Advanced_Databases
+```
+**2.** Install Apache Spark: Follow the [official Spark installation guide](https://spark.apache.org/docs/latest/).
+
+**3.** Ensure HDFS is running and load the dataset into HDFS:
+```bash
+hdfs dfs -put movie_data /path/to/hdfs/files
+```
+
+**4.** Run the Spark jobs using:
+```bash
+spark-submit script.py
+```
+Be careful, for query 1 (q1) the user must give the input format (csv || parquet). For example:
+```bash
+spark-submit q1_sql.py csv
+```
+
+## Results
+The results of each query (both RDD and SQL) are located in th [output](output) folder. The Performance Comparison, which includes execution times visualized in bar charts and general analysis of our project can be located in our [report](report.pdf).
+
+## Conclusions
+This project demonstrates the efficiency and scalability of Apache Spark for large-scale data processing, utilizing both RDD and SQL APIs. It also provides insights into advanced database techniques, including data partitioning, indexing, and join optimization.
