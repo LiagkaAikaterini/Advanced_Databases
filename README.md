@@ -10,7 +10,7 @@ This project leverages Apache Spark to perform analytical queries on a subset of
 - Alexopoulos Ioannis
 
 ## Datasets
-The dataset we used for the analysis is a subset of the [Full MovieLens Dataset](https://grouplens.org/datasets/movielens/latest/). The version we leveraged can be found on [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset). The exact Dataset we used can be downloaded [here](http://www.cslab.ntua.gr/courses/atds/movie_data.tar.gz) and it includes the following CSV files:
+The dataset we used for the analysis is a subset of the [Full MovieLens Dataset](https://grouplens.org/datasets/movielens/latest/). The version we leveraged can be found on [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset). The exact Dataset we used can be downloaded [here]([http://www.cslab.ntua.gr/courses/atds/movie_data.tar.gz](https://drive.google.com/file/d/1xoSWuhR7WB_BqU_l0rCLLDrHtgYbAJRE/view?usp=sharing)) and it includes the following CSV files:
 
 - **movies.csv (17 MB) :** Movie details. The key fields in this dataset are:
     - **_id_**: The unique identifier for each movie (integer).
